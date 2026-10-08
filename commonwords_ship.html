@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Flashcards - Set 4</title>
+<style>
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:Arial,"Segoe UI",sans-serif;
+  background:linear-gradient(135deg,#fff5fb 0%,#eef9ff 48%,#f5fff1 100%);
+  color:#172033;
+}
+header { text-align:center; padding:30px 16px 18px; }
+h1 {
+  margin:0 0 8px;
+  font-size:32px;
+  color:#6d28d9;
+}
+.subtitle { color:#667085; font-size:16px; }
+.controls {
+  display:flex; justify-content:center; gap:12px;
+  flex-wrap:wrap; margin:8px 16px 28px;
+}
+.controls button {
+  border:0; border-radius:14px; padding:11px 20px;
+  color:white; font-size:15px; font-weight:700; cursor:pointer;
+  box-shadow:0 5px 14px rgba(50,50,80,.15);
+}
+.play { background:linear-gradient(135deg,#06b6d4,#2563eb); }
+.stop { background:linear-gradient(135deg,#f43f5e,#e11d48); }
+.shuffle { background:linear-gradient(135deg,#8b5cf6,#ec4899); }
+.grid {
+  width:min(1200px,94%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  gap:20px;
+  padding-bottom:45px;
+}
+.card {
+  background:rgba(255,255,255,.97);
+  border-radius:22px;
+  min-height:270px;
+  padding:21px;
+  box-shadow:0 8px 25px rgba(40,50,80,.12);
+  border:2px solid #e9e7f5;
+  position:relative;
+  overflow:hidden;
+  transition:.18s ease;
+}
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 14px 30px rgba(40,50,80,.18);
+}
+.card:nth-child(4n+1)::before { background:#f59e0b; }
+.card:nth-child(4n+2)::before { background:#ec4899; }
+.card:nth-child(4n+3)::before { background:#06b6d4; }
+.card:nth-child(4n)::before { background:#22c55e; }
+.card::before {
+  content:""; position:absolute; left:0; top:0; width:100%; height:7px;
+}
+.top {
+  color:#8b5cf6; font-size:12px; font-weight:800;
+  letter-spacing:1px;
+}
+.word {
+  text-align:center; font-size:34px; font-weight:800;
+  margin:15px 0 6px; color:#111827;
+}
+.ipa {
+  text-align:center; font-family:"Times New Roman",serif;
+  font-size:20px; font-weight:600; color:#6366f1;
+  margin-bottom:13px;
+}
+.meaning {
+  text-align:center; font-size:18px; font-weight:650;
+  color:#475467; min-height:43px; margin-bottom:19px;
+}
+.card button {
+  width:100%; border:0; border-radius:13px; padding:12px;
+  background:linear-gradient(135deg,#0ea5e9,#2563eb);
+  color:white; font-size:16px; font-weight:700;
+  cursor:pointer; box-shadow:0 5px 12px rgba(37,99,235,.2);
+}
+.card button:hover { opacity:.9; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>✨ Vocabulary Flashcards</h1>
+  <div class="subtitle">Từ vựng • IPA • Nghĩa tiếng Việt • 🔊 Phát âm</div>
+</header>
+
+<div class="controls">
+  <button class="play" onclick="speakAll()">▶ Phát tất cả</button>
+  <button class="stop" onclick="stopSpeech()">■ Dừng</button>
+  <button class="shuffle" onclick="shuffleCards()">🔀 Xáo trộn</button>
+</div>
+
+<main class="grid" id="grid">
+
+<article class="card">
+  <div class="top"><span>WORD 1</span></div>
+  <div class="word">begin</div>
+  <div class="ipa">/bɪˈɡɪn/</div>
+  <div class="meaning">bắt đầu</div>
+  <button onclick="speak('begin')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 2</span></div>
+  <div class="word">without</div>
+  <div class="ipa">/wɪˈðaʊt/</div>
+  <div class="meaning">không có</div>
+  <button onclick="speak('without')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 3</span></div>
+  <div class="word">million</div>
+  <div class="ipa">/ˈmɪljən/</div>
+  <div class="meaning">triệu</div>
+  <button onclick="speak('million')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 4</span></div>
+  <div class="word">different</div>
+  <div class="ipa">/ˈdɪfrənt/</div>
+  <div class="meaning">khác nhau</div>
+  <button onclick="speak('different')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 5</span></div>
+  <div class="word">business</div>
+  <div class="ipa">/ˈbɪznəs/</div>
+  <div class="meaning">kinh doanh</div>
+  <button onclick="speak('business')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 6</span></div>
+  <div class="word">city</div>
+  <div class="ipa">/ˈsɪti/</div>
+  <div class="meaning">thành phố</div>
+  <button onclick="speak('city')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 7</span></div>
+  <div class="word">minute</div>
+  <div class="ipa">/ˈmɪnɪt/</div>
+  <div class="meaning">phút</div>
+  <button onclick="speak('minute')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 8</span></div>
+  <div class="word">difficult</div>
+  <div class="ipa">/ˈdɪfɪkəlt/</div>
+  <div class="meaning">khó khăn</div>
+  <button onclick="speak('difficult')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 9</span></div>
+  <div class="word">listen</div>
+  <div class="ipa">/ˈlɪsən/</div>
+  <div class="meaning">lắng nghe</div>
+  <button onclick="speak('listen')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 10</span></div>
+  <div class="word">billion</div>
+  <div class="ipa">/ˈbɪljən/</div>
+  <div class="meaning">tỷ</div>
+  <button onclick="speak('billion')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 11</span></div>
+  <div class="word">since</div>
+  <div class="ipa">/sɪns/</div>
+  <div class="meaning">kể từ khi</div>
+  <button onclick="speak('since')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 12</span></div>
+  <div class="word">symbol</div>
+  <div class="ipa">/ˈsɪmbəl/</div>
+  <div class="meaning">ký hiệu</div>
+  <button onclick="speak('symbol')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 13</span></div>
+  <div class="word">anything</div>
+  <div class="ipa">/ˈeniθɪŋ/</div>
+  <div class="meaning">bất cứ điều gì</div>
+  <button onclick="speak('anything')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 14</span></div>
+  <div class="word">history</div>
+  <div class="ipa">/ˈhɪstəri/</div>
+  <div class="meaning">lịch sử</div>
+  <button onclick="speak('history')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 15</span></div>
+  <div class="word">within</div>
+  <div class="ipa">/wɪˈðɪn/</div>
+  <div class="meaning">trong vòng / bên trong</div>
+  <button onclick="speak('within')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 16</span></div>
+  <div class="word">consider</div>
+  <div class="ipa">/kənˈsɪdər/</div>
+  <div class="meaning">cân nhắc</div>
+  <button onclick="speak('consider')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 17</span></div>
+  <div class="word">build</div>
+  <div class="ipa">/bɪld/</div>
+  <div class="meaning">xây dựng</div>
+  <button onclick="speak('build')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 18</span></div>
+  <div class="word">college</div>
+  <div class="ipa">/ˈkɑːlɪdʒ/</div>
+  <div class="meaning">trường cao đẳng / đại học</div>
+  <button onclick="speak('college')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 19</span></div>
+  <div class="word">interest</div>
+  <div class="ipa">/ˈɪntrəst/</div>
+  <div class="meaning">sự quan tâm / lãi suất</div>
+  <button onclick="speak('interest')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 20</span></div>
+  <div class="word">six</div>
+  <div class="ipa">/sɪks/</div>
+  <div class="meaning">sáu</div>
+  <button onclick="speak('six')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 21</span></div>
+  <div class="word">little</div>
+  <div class="ipa">/ˈlɪtəl/</div>
+  <div class="meaning">nhỏ / ít</div>
+  <button onclick="speak('little')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 22</span></div>
+  <div class="word">position</div>
+  <div class="ipa">/pəˈzɪʃən/</div>
+  <div class="meaning">vị trí</div>
+  <button onclick="speak('position')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 23</span></div>
+  <div class="word">activity</div>
+  <div class="ipa">/ækˈtɪvəti/</div>
+  <div class="meaning">hoạt động</div>
+  <button onclick="speak('activity')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 24</span></div>
+  <div class="word">image</div>
+  <div class="ipa">/ˈɪmɪdʒ/</div>
+  <div class="meaning">hình ảnh</div>
+  <button onclick="speak('image')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 25</span></div>
+  <div class="word">hospital</div>
+  <div class="ipa">/ˈhɑːspɪtəl/</div>
+  <div class="meaning">bệnh viện</div>
+  <button onclick="speak('hospital')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 26</span></div>
+  <div class="word">determine</div>
+  <div class="ipa">/dɪˈtɜːrmɪn/</div>
+  <div class="meaning">xác định</div>
+  <button onclick="speak('determine')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 27</span></div>
+  <div class="word">disease</div>
+  <div class="ipa">/dɪˈziːz/</div>
+  <div class="meaning">bệnh tật</div>
+  <button onclick="speak('disease')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 28</span></div>
+  <div class="word">visit</div>
+  <div class="ipa">/ˈvɪzɪt/</div>
+  <div class="meaning">thăm / chuyến thăm</div>
+  <button onclick="speak('visit')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 29</span></div>
+  <div class="word">finish</div>
+  <div class="ipa">/ˈfɪnɪʃ/</div>
+  <div class="meaning">kết thúc / hoàn thành</div>
+  <button onclick="speak('finish')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 30</span></div>
+  <div class="word">specific</div>
+  <div class="ipa">/spəˈsɪfɪk/</div>
+  <div class="meaning">cụ thể</div>
+  <button onclick="speak('specific')">🔊 Nghe phát âm</button>
+</article>
+
+<article class="card">
+  <div class="top"><span>WORD 31</span></div>
+  <div class="word">quit</div>
+  <div class="ipa">/kwɪt/</div>
+  <div class="meaning">bỏ / từ bỏ</div>
+  <button onclick="speak('quit')">🔊 Nghe phát âm</button>
+</article>
+</main>
+
+<script>
+const words = ["begin",
+"without",
+"million",
+"different",
+"business",
+"city",
+"minute",
+"difficult",
+"listen",
+"billion",
+"since",
+"symbol",
+"anything",
+"history",
+"within",
+"consider",
+"build",
+"college",
+"interest",
+"six",
+"little",
+"position",
+"activity",
+"image",
+"hospital",
+"determine",
+"disease",
+"visit",
+"finish",
+"specific",
+"quit"];
+
+function speak(word) {
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(word);
+  u.lang = "en-US";
+  u.rate = 0.82;
+  u.pitch = 1;
+  speechSynthesis.speak(u);
+}
+
+function speakAll() {
+  speechSynthesis.cancel();
+  let i = 0;
+  function next() {
+    if (i >= words.length) return;
+    const u = new SpeechSynthesisUtterance(words[i]);
+    u.lang = "en-US";
+    u.rate = 0.82;
+    u.pitch = 1;
+    u.onend = () => {
+      i++;
+      setTimeout(next,350);
+    };
+    speechSynthesis.speak(u);
+  }
+  next();
+}
+
+function stopSpeech() {
+  speechSynthesis.cancel();
+}
+
+function shuffleCards() {
+  const grid = document.getElementById("grid");
+  const cards = Array.from(grid.children);
+  cards.sort(() => Math.random() - 0.5);
+  cards.forEach(card => grid.appendChild(card));
+}
+</script>
+</body>
+</html>
