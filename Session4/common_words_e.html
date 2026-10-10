@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Common words - /ɛ/ — /ɛ/ Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#28364a;--muted:#69788b;--blue:#4678b8;--pale:#eef5ff;--green:#2f8a68;--red:#c45c6a;--line:#dfe8f0;--bg:#f6f9fc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family: "Be Vietnam Pro", "Noto Sans", "Segoe UI", Arial, Tahoma, sans-serif;color:var(--ink)}
+main{max-width:720px;margin:auto;padding:24px 16px 40px}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+h1{font-size:clamp(1.6rem,5vw,2.2rem);margin:8px 0 4px}.sub{color:var(--muted);margin:0 0 18px}
+.progress{height:8px;background:#e7ebf5;border-radius:99px;overflow:hidden;margin:16px 0 8px}.bar{height:100%;width:0;background:var(--blue);transition:width .2s}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(20px,5vw,32px);box-shadow:0 6px 22px #3e689012;margin-top:18px}
+.word{text-align:center;font-size:clamp(2.5rem,10vw,4rem);font-weight:900;letter-spacing:-.04em;margin:8px 0;color:#294f83}
+.ipa{text-align:center;font-size:1.2rem;color:#4678b8;margin:0;font-weight:600}.meaning{text-align:center;color:var(--muted);margin:8px 0 26px;font-size:1.05rem}
+.prompt{text-align:center;font-weight:750;font-size:1.02rem;color:#315f9f;background:#edf5ff;border:1px solid #d9e9fb;border-radius:12px;padding:11px 14px;margin:0 0 16px;letter-spacing:.005em}.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.option{border:1px solid var(--line);border-radius:16px;padding:16px 10px;text-align:center;background:#fff;transition:border-color .15s,background .15s}.option-a{border-color:#f0c6d5;background:#fffafd}.option-b{border-color:#c5dcf7;background:#fbfdff}.option-a .play{background:#fceaf1;color:#a94470}.option-b .play{background:#eaf3ff;color:#315f9f}.option-a .pick{background:#fff5f8;border-color:#f0c6d5;color:#a94470}.option-b .pick{background:#f3f8ff;border-color:#c5dcf7;color:#315f9f}.option-a .play:hover,.option-a .pick:hover{background:#f9dce8}.option-b .play:hover,.option-b .pick:hover{background:#dcecff}
+.play{width:100%;border:0;border-radius:12px;padding:14px 8px;background:#edf5ff;color:#315f9f;font-size:1.02rem;font-weight:750;cursor:pointer;transition:background .15s}
+.pick{width:100%;margin-top:10px;border:1px solid #d9e3ef;background:#f8fbff;color:#315f9f;border-radius:12px;padding:11px 8px;font-weight:750;cursor:pointer;transition:background .15s,border-color .15s}
+.option.chosen-correct{border-color:var(--green);background:#effaf5}.option.chosen-wrong{border-color:var(--red);background:#fff2f3}.play:hover,.pick:hover{background:#e3efff}.pick:focus-visible,.play:focus-visible,.nav:focus-visible{outline:3px solid #a8c9f2;outline-offset:2px}
+.feedback{display:none;margin-top:18px;padding:16px;border-radius:16px;line-height:1.5}.feedback.good{display:block;background:#effaf5;color:#126847}.feedback.bad{display:block;background:#fff2f3;color:#922b37}.feedback strong{display:block;margin-bottom:5px;font-size:1.1rem}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.nav{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer}.prev{background:#eef1f7;color:var(--ink)}.next{background:var(--blue);color:white}.nav:disabled{opacity:.35;cursor:not-allowed}
+.small{font-size:.84rem;color:var(--muted)}.finish{display:none;text-align:center;position:relative;overflow:hidden}.finish h2{font-size:1.8rem;margin:8px 0}#restart{background:var(--blue);color:white;border:0;border-radius:12px;padding:12px 18px;font-weight:800}.result-icon{font-size:clamp(4rem,18vw,7rem);line-height:1.1;margin:8px 0}.percentage{font-size:clamp(4.5rem,20vw,8rem);line-height:1;font-weight:950;letter-spacing:-.06em;color:var(--blue);margin:8px 0 14px}.finish.success{background:linear-gradient(145deg,#fff8fb,#fff 55%,#fff5d9);border-color:#f2d3df}.finish.practice{background:linear-gradient(145deg,#f3f8ff,#fff 60%,#f9f1ff);border-color:#d7e2f3}.finish .eyebrow{color:#5277a8}.finish h2{color:#345b91}.finish .percentage{color:#4678b8}.finish.success .percentage{color:#d45d8a}.finish .cheerline{color:#b94f7b}.finish .englishline{color:#68788d}.finish #restart{background:#4678b8;box-shadow:0 3px 0 #315f9f}.finish #restart:hover{background:#315f9f}.cheerline{font-size:1.35rem;font-weight:850;margin:8px 0}.englishline{font-size:1.1rem;font-weight:750;margin:4px 0 20px}.confetti{position:absolute;inset:0;pointer-events:none;opacity:.3;background-image:radial-gradient(circle at 12% 20%,#ffca3a 0 5px,transparent 6px),radial-gradient(circle at 85% 18%,#ff5d8f 0 5px,transparent 6px),radial-gradient(circle at 20% 80%,#3ca7ff 0 5px,transparent 6px),radial-gradient(circle at 90% 78%,#62c370 0 5px,transparent 6px)}
+@media(max-width:450px){main{padding:18px 12px}.options{gap:8px}.option{padding:12px 8px}.card{border-radius:20px}}
+
+
+
+
+.eyebrow{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;color:var(--blue);margin-bottom:14px;line-height:1.2}
+.brand-main{font-family:"Be Vietnam Pro","Noto Sans","Segoe UI",Arial,Tahoma,sans-serif;font-size:clamp(1.45rem,4.6vw,2rem);font-weight:900;letter-spacing:.025em}
+.brand-sub{font-family:"Be Vietnam Pro","Noto Sans","Segoe UI",Arial,Tahoma,sans-serif;font-size:clamp(.82rem,2.2vw,1rem);font-weight:700;letter-spacing:.01em}
+h1{font-family:"Be Vietnam Pro","Noto Sans","Segoe UI",Arial,Tahoma,sans-serif;font-size:clamp(.95rem,2.4vw,1.15rem)!important;line-height:1.25;font-weight:650;letter-spacing:0;margin-top:0;color:#435166}
+body,button,input,select,textarea{font-family:"Be Vietnam Pro","Noto Sans","Segoe UI",Arial,Tahoma,sans-serif}
+
+</style></head>
+<body><main>
+<div class="eyebrow"><span class="brand-main">TIẾNG ANH DÌ LAM</span><span class="brand-sub">PRONUNCIATION COURSE</span></div><h1>Common words - /ɛ/</h1>
+<p class="sub">Bài tập này giúp bạn luyện nghe và nhận diện âm /ɛ/. Hãy nghe kỹ hai lựa chọn, chọn cách phát âm đúng và luyện đọc lại sau khi hoàn thành.</p>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="meta"><span id="counter">Thẻ 1 / 37</span><span id="score">Đúng: 0 / 0</span></div>
+<section class="card" id="quiz">
+<div class="word" id="word"></div><p class="ipa" id="ipa"></p><p class="meaning" id="meaning"></p>
+<p class="prompt">Chọn cách phát âm đúng</p>
+<div class="options">
+<div class="option option-a" id="boxA"><button class="play" id="playA">🔊 Nghe A</button><button class="pick" id="pickA">Chọn A</button></div>
+<div class="option option-b" id="boxB"><button class="play" id="playB">🔊 Nghe B</button><button class="pick" id="pickB">Chọn B</button></div>
+</div>
+<div class="feedback" id="feedback" aria-live="polite"></div>
+<div class="actions"><button class="nav prev" id="prev">← Trước</button><span class="small" id="hint">Chọn đáp án để mở thẻ tiếp theo.</span><button class="nav next" id="next" disabled>Tiếp theo →</button></div>
+</section>
+<section class="card finish" id="finish"><div class="confetti" id="confetti"></div><div class="eyebrow">Kết quả của bạn</div><div class="result-icon" id="resulticon" aria-hidden="true">🌷✨</div><div class="percentage" id="percentage">0%</div><h2 id="resultheading">You did it!</h2><p class="cheerline">Ráng lên 100% nào!</p><p class="englishline">Keep going. You can do it.</p><button id="restart">Luyện lại</button></section>
+</main>
+<script>
+const items=[
+ ["when","/wɛn/","khi","win","Nhầm nguyên âm /ɛ/ với /ɪ/."],
+ ["let","/lɛt/","cho phép","lit","Nhầm nguyên âm /ɛ/ với /ɪ/."],
+ ["help","/hɛlp/","giúp đỡ","hell","Dạng 3: từ gần âm, khác phụ âm cuối."],
+ ["where","/wɛr/","ở đâu","wire","Dạng 1: đối chiếu nguyên âm trong từ gần âm; cách phát âm có thể thay đổi theo giọng."],
+ ["again","/əˈɡɛn/","lại; một lần nữa","a cane","Dạng 1: đối chiếu nguyên âm /ɛ/ với /eɪ/ trong cụm gần âm."],
+ ["next","/nɛkst/","tiếp theo","nixed","Dạng 1: đối chiếu nguyên âm /ɛ/ với /ɪ/ trong từ gần âm."],
+ ["head","/hɛd/","đầu","had","Dạng 1: nhầm nguyên âm /ɛ/ với /æ/."],
+ ["yes","/jɛs/","vâng; có","Jess","Dạng 3: từ gần âm, khác phụ âm đầu."],
+ ["friend","/frɛnd/","bạn","frond","Dạng 1: đối chiếu nguyên âm /ɛ/ với /ɑ/ trong từ gần âm."],
+ ["yet","/jɛt/","chưa; vẫn","jet","Dạng 3: từ gần âm, khác phụ âm đầu."],
+ ["end","/ɛnd/","kết thúc; phần cuối","and","Dạng 1: nhầm nguyên âm /ɛ/ với /æ/."],
+ ["set","/sɛt/","đặt; thiết lập","sit","Dạng 1: nhầm nguyên âm /ɛ/ với /ɪ/."],
+ ["president","/ˈprɛzɪdənt/","tổng thống; chủ tịch","resident","Dạng 3: từ gần âm, khác phụ âm đầu."],
+ ["several","/ˈsɛvərəl/","một vài; một số","severely","Dạng 2: chú ý vị trí trọng âm; hai từ có nhịp nhấn khác nhau."],
+ ["whether","/ˈwɛðər/","liệu; liệu có… hay không","wither","Dạng 1: nhầm nguyên âm /ɛ/ với /ɪ/."],
+ ["level","/ˈlɛvəl/","cấp độ; mức độ","revel","Dạng 3: từ gần âm, khác phụ âm đầu."],
+ ["spend","/spɛnd/","dành, tiêu (thời gian/tiền)","stand","Dạng 1: đối chiếu nguyên âm /ɛ/ với /æ/."],
+ ["health","/hɛlθ/","sức khỏe","heath","Dạng 3: từ gần âm, khác phụ âm cuối."],
+ ["air","/ɛr/","không khí","ear","Dạng 1: đối chiếu nguyên âm /ɛ/ với /ɪ/; cách phát âm phụ thuộc giọng."],
+ ["second","/ˈsɛkənd/","giây; thứ hai","sicken","Dạng 1: nhầm nguyên âm /ɛ/ với /ɪ/."],
+ ["bed","/bɛd/","giường","bad","Phân biệt nguyên âm /ɛ/ trong bed với /æ/ trong bad."],
+ ["pet","/pɛt/","thú cưng","pat","Phân biệt nguyên âm /ɛ/ trong pet với /æ/ trong pat."],
+ ["bet","/bɛt/","đặt cược","bat","Phân biệt nguyên âm /ɛ/ trong bet với /æ/ trong bat."],
+ ["beg","/bɛɡ/","van xin; cầu xin","bag","Phân biệt nguyên âm /ɛ/ trong beg với /æ/ trong bag."],
+ ["peck","/pɛk/","mổ (bằng mỏ)","pack","Phân biệt nguyên âm /ɛ/ trong peck với /æ/ trong pack."],
+ ["said","/sɛd/","đã nói (quá khứ của say)","sad","Phân biệt nguyên âm /ɛ/ trong said với /æ/ trong sad."],
+ ["dead","/dɛd/","chết; đã chết","dad","Phân biệt nguyên âm /ɛ/ trong dead với /æ/ trong dad."],
+ ["fed","/fɛd/","đã cho ăn","fad","Phân biệt nguyên âm /ɛ/ trong fed với /æ/ trong fad."],
+ ["led","/lɛd/","đã dẫn dắt","lad","Phân biệt nguyên âm /ɛ/ trong led với /æ/ trong lad."],
+ ["area","/ˈɛriə/","khu vực","aria","Dạng 3: từ gần âm."]
+];
+let idx=0,answered=new Set(),correct=new Set(),order=[];
+const $=id=>document.getElementById(id);
+function speak(text){
+ if(!("speechSynthesis" in window)){alert("Trình duyệt chưa hỗ trợ âm thanh tự động. Hãy thử Chrome hoặc Edge.");return;}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="en-US";u.rate=.82;
+ const voices=speechSynthesis.getVoices();u.voice=voices.find(v=>v.lang==="en-US"&&/Google US English|Samantha|Jenny|Aria|US English/i.test(v.name))||voices.find(v=>v.lang==="en-US")||null;speechSynthesis.speak(u);
+}
+function tone(ok){
+ try{
+  const c=new(window.AudioContext||window.webkitAudioContext)();
+  const notes=ok?[660,880,1046,1320]:[440,370,294];
+  let t=c.currentTime;
+  notes.forEach((freq,i)=>{
+   const o=c.createOscillator(),g=c.createGain();
+   o.type="sine";o.frequency.value=freq;o.connect(g);g.connect(c.destination);
+   g.gain.setValueAtTime(.001,t+i*.16);
+   g.gain.exponentialRampToValueAtTime(ok?.11:.07,t+i*.16+.025);
+   g.gain.exponentialRampToValueAtTime(.001,t+i*.16+.14);
+   o.start(t+i*.16);o.stop(t+i*.16+.16);
+  });
+  setTimeout(()=>c.close(),900);
+ }catch(e){}
+}
+function render(){
+ const it=items[idx];$("word").textContent=it[0];$("ipa").textContent=it[1];$("meaning").textContent=it[2];
+ $("counter").textContent=`Thẻ ${idx+1} / ${items.length}`;$("score").textContent=`Đúng: ${correct.size} / ${answered.size}`;$("bar").style.width=(answered.size/items.length*100)+"%";
+ $("feedback").className="feedback";$("feedback").style.display="none";$("feedback").textContent="";
+ $("prev").disabled=idx===0;$("next").disabled=!answered.has(idx);$("next").textContent=idx===items.length-1?"Xem kết quả →":"Tiếp theo →";
+ $("hint").textContent=answered.has(idx)?"Bạn đã hoàn thành thẻ này.":"Chọn đáp án để mở thẻ tiếp theo.";
+ $("boxA").className="option";$("boxB").className="option";$("pickA").disabled=answered.has(idx);$("pickB").disabled=answered.has(idx);
+ // Each option contains an audio button. The correct option plays the target word; the distractor plays a deliberately altered pronunciation.
+ order=Math.random()<.5?["correct","bad"]:["bad","correct"];
+ $("playA").onclick=()=>speak(order[0]==="correct"?it[0]:it[3]);$("playB").onclick=()=>speak(order[1]==="correct"?it[0]:it[3]);
+ $("pickA").onclick=()=>choose("A",order[0]);$("pickB").onclick=()=>choose("B",order[1]);
+}
+function choose(letter,kind){if(answered.has(idx))return;answered.add(idx);const ok=kind==="correct";if(ok)correct.add(idx);
+ $("pickA").disabled=true;$("pickB").disabled=true;$("box"+letter).classList.add(ok?"chosen-correct":"chosen-wrong");
+ const f=$("feedback");f.style.display="block";f.className="feedback "+(ok?"good":"bad");
+ f.innerHTML=ok?`<strong>✓ Correct!</strong> Chính xác!`:`<strong>✗ Chưa đúng.</strong> Hãy tiếp tục luyện tập nhé!`;
+ tone(ok);if(ok)setTimeout(()=>speak("Correct!"),180);else setTimeout(()=>speak("Try again."),180);
+ $("score").textContent=`Đúng: ${correct.size} / ${answered.size}`;$("bar").style.width=(answered.size/items.length*100)+"%";$("next").disabled=false;$("hint").textContent="Đã mở khóa thẻ tiếp theo.";
+}
+function finish(){
+ $("quiz").style.display="none";
+ $("finish").style.display="block";
+ const pct=Math.round(correct.size/items.length*100);
+ const success=pct>=90;
+ $("percentage").textContent=pct+"%";
+ $("resulticon").textContent=success?"🎉🎊🥳":"😅🤔";
+ $("finish").classList.toggle("success",success);
+ $("finish").classList.toggle("practice",!success);
+ $("resultheading").textContent=success?"Hooray!":"Keep trying!";
+ tone(success);
+ setTimeout(()=>speak(success?"Hooray!":"Keep going. You can do it."),220);
+}
+$("prev").onclick=()=>{if(idx>0){idx--;render()}};$("next").onclick=()=>{if(!answered.has(idx))return;if(idx<items.length-1){idx++;render()}else if(answered.size===items.length)finish()};
+$("restart").onclick=()=>{idx=0;answered.clear();correct.clear();$("quiz").style.display="block";$("finish").style.display="none";$("finish").classList.remove("success","practice");render()};
+if("speechSynthesis"in window)speechSynthesis.onvoiceschanged=()=>{};render();
+</script></body></html>
